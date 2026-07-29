@@ -22,6 +22,8 @@ def judge(player, computer):
 
 # ===== 游戏主体：全部装进 main() 里 =====
 def main():
+    i = 0
+    i1 = 0
     # 1. 初始化或读取存档
     player_data = {'name': '玩家', 'level': '奶龙战神级', 'win': 0, 'lose': 0}
     
@@ -38,6 +40,16 @@ def main():
     print("=== 欢迎来到石头剪刀布 ===" \
     "你将和一个电脑对战(我知道这个游戏很sb)")
 
+    def shucuo():
+        if i>=5:
+            print('sb别乱搞！')
+        if i>=10:
+            print('别搞了，再输错不会有反应了')
+        if i>=20:
+            print('你怎么不信呢？再输错真没反应了')
+        if i>=100:
+            print('呃。。。你居然真的有这么闲')
+
     # 2. 主游戏循环
     while True:
         
@@ -46,15 +58,7 @@ def main():
         print("2. 剪刀")
         print("3. 布")
         print("0. 退出游戏")
-        def shucuo():
-            if i>=5:
-                print('sb别乱搞！')
-            if i>=10:
-                print('别搞了，再输错不会有反应了')
-            if i>=20:
-                print('你怎么不信呢？再输错真没反应了')
-            if i>=100:
-                print('呃。。。你居然真的有这么闲')
+        
         
 
         try:
