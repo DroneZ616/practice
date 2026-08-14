@@ -1,3 +1,6 @@
 rps_save.json
 items.txt
 调试.py
+rps.v1.spec
+build/
+dist/
