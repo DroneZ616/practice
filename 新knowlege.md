@@ -6,11 +6,11 @@
 
 ##### **3，数值类型，字符串，格式化输出**
 
-##### **4，算数，赋值运算符，输入函数，转义字符**
+##### **4，算数运算符，赋值运算符，输入函数，转义字符**
 
-##### **5，比较运算符，逻辑运算符，三目运算**
+##### **5，比较运算符，逻辑运算符**
 
-##### **6，判断类：if-else/elif，try-except**
+##### **6，判断类：if-else/elif，try-except，三目运算**
 
 ##### **7，while/for循环**
 
@@ -1673,6 +1673,220 @@ not 永远返回 True 或 False，因为它是一个取反操作。
 if (x > 0 and y > 0) or z > 0:
     pass
 ```
+
+
+
+
+# 判断类
+
+
+## 1. if-elif-else（条件判断）
+
+基本结构：
+
+```python
+
+if 条件1:
+    # 条件1为真时执行
+elif 条件2:
+    # 条件1为假且条件2为真时执行
+else:
+    # 所有条件都为假时执行
+```
+
+硬核细节 1：elif 的本质是“嵌套的 if-else”的语法糖
+
+```python
+
+# 你写的：
+if a > 0:
+    print("正数")
+elif a == 0:
+    print("零")
+else:
+    print("负数")
+
+# 实际上等价于：
+if a > 0:
+    print("正数")
+else:
+    if a == 0:
+        print("零")
+    else:
+        print("负数")
+elif 让你的代码少了一层缩进，但底层逻辑完全一样。
+```
+
+硬核细节 2：if 条件判断的不是“布尔值”，而是“隐式布尔转换”
+
+Python 的 if 语句会自动将条件表达式的结果转换成布尔值，而不要求它必须是 True 或 False。
+
+被判定为 False 的值（Falsy）只有 8 种：
+None,False,数字 0（包括 0、0.0、0j）,空字符串 "",空列表 []
+空元组 (),空字典 {},空集合 set()
+
+除此以外，一切都被判定为 True。
+
+```python
+
+# 你见过这种写法：
+if user_name:   # 如果 user_name 不是空字符串，就认为它“存在”
+    print(f"你好，{user_name}")
+
+# 等价于：
+if user_name != "":
+    print(f"你好，{user_name}")
+```
+
+这种写法是 Python 里常见的“防御性检查”，可以在不额外处理空值的情况下简化逻辑。
+
+硬核细节 3：elif 的“短路”效应
+
+和 and/or 一样，if-elif-else 是从上到下依次检查的。一旦某个条件为真，后面的所有 elif 和 else 都会被直接跳过，不会再执行。
+
+```python
+
+x = 5
+if x > 0:
+    print("A")
+elif x > 2:   # 即使 x > 2 也为真，但因为上面已经执行了，这行永远不会触发
+    print("B")
+else:
+    print("C")
+# 输出：A（B 和 C 都不会执行）
+```
+
+这和多个独立的 if 不同（独立的 if 会逐一检查，不会短路）。
+
+
+## 2. try-except（异常处理）
+
+硬核细节 1：try-except 捕获的是“异常”，不是“错误”
+
+语法错误（SyntaxError）：代码写错了，连运行都进不去，try 救不了。
+
+运行时异常（Exception）：代码能运行，但运行中途出问题了（比如用户输入了非数字），try 可以捕获。
+
+```python
+
+# ❌ 语法错误，try 救不了
+try:
+    print("hello"   # 这里漏了右括号，程序根本跑不起来
+except:
+    pass
+
+# ✅ 运行时异常，try 可以捕获
+try:
+    num = int(input("请输入数字："))
+except ValueError:
+    print("输入的不是有效数字")
+```
+
+硬核细节 2：异常捕获的顺序是从具体到通用
+
+如果你写了多个 except 块，必须把最具体的异常写在最前面，否则会直接拦截掉所有更具体的异常。
+
+```python
+
+try:
+    num = int(input("请输入数字："))
+except ValueError:
+    print("输入的不是数字")
+except Exception as e:
+    print(f"其他错误：{e}")
+```
+
+如果反过来写（先 `except Exception`），那么 `ValueError` 也会被捕获到，后面的 except ValueError 永远不会执行。
+
+硬核细节 3：except 不捕获 KeyboardInterrupt 和 SystemExit
+
+KeyboardInterrupt 是用户按 Ctrl+C 触发的，SystemExit 是 sys.exit() 触发的。这两个异常不属于普通异常，它们代表“用户/程序要求退出”，而不是“程序出错了”。
+
+```python
+
+try:
+    while True:
+        print("运行中...")
+except KeyboardInterrupt:
+    print("用户按了 Ctrl+C，程序退出")
+```
+这是合理的用法，用于让程序能够优雅地响应中断。
+
+硬核细节 4：else 和 finally 在 try-except 中的意义
+
+else：当 try 块没有抛出任何异常时，执行 else 块。
+
+finally：无论是否抛出异常，最终都会执行（比如关闭文件、释放资源）。
+
+```python
+try:
+    file = open("data.txt", "r")
+except FileNotFoundError:
+    print("文件不存在")
+else:
+    print("文件读取成功")
+    content = file.read()
+finally:
+    print("清理中...")
+    file.close()
+```
+如果文件存在：执行 try → else → finally。
+
+如果文件不存在：执行 try（报错）→ except → finally。
+
+
+## 3. 三目运算（条件表达式）
+
+
+三目运算是在一行内完成“如果...否则...”的逻辑，常用于简化简单赋值。
+
+```python
+
+值1 if 条件 else 值2
+```
+
+如果条件为真，返回 值1；否则返回 值2。
+
+硬核细节 1：它必须有返回值（不能执行语句，只能返回表达式）
+
+```python
+
+# 正确（赋值）
+age = 18
+status = "成年" if age >= 18 else "未成年"
+
+# 错误（不能在里面写 print）
+age >= 18 else print("未成年")   # ❌ SyntaxError
+```
+
+硬核细节 2：可以嵌套，但可读性会下降
+
+```python
+
+score = 85
+grade = "优秀" if score >= 90 else ("良好" if score >= 70 else "及格")
+print(grade)   # 输出：良好
+```
+
+嵌套的三目运算虽然能写，但超过两层就会让人头大。建议如果逻辑超过两层，直接用传统的 if-elif-else。
+
+硬核细节 3：三目运算 vs if-else 块
+
+```python
+
+# if-else 块（可以执行多行代码）
+if age >= 18:
+    print("成年")
+    status = "成年"
+else:
+    print("未成年")
+    status = "未成年"
+
+# 三目运算（只能取一个值，不能执行语句）
+status = "成年" if age >= 18 else "未成年"
+```
+
+三目运算是“表达式”，不是“语句”。它必须返回一个值，而不能包含多个操作。
 
 
 
