@@ -16,7 +16,7 @@
 
 ##### **8，break/contine关键字**
 
-##### **9，列表，元组，字典，集合**
+##### **9，列表list，元组tuplt，字典dict，集合set**
 
 ##### **10，类型转换：int,float,str,eva,tuple,list,chr()**
 
@@ -26,7 +26,7 @@
 
 
 
-# 注释（Comments）：
+# ***一，注释（Comments）***
 
 **注释就是代码里“给人看”的文字，电脑执行时会忽略它们。**
 
@@ -82,7 +82,7 @@
 
 
 
-# 输出函数print()
+# ***二，输出函数print()***
 
 print() 的完整参数签名是：
 
@@ -151,7 +151,7 @@ print("A", "B", end=">>>", sep="--")
 
 
 
-# 标识符：
+# ***三，标识符***
 
 🏷️第一层：标识符的硬性语法（你基本知道，快速过）
 
@@ -190,7 +190,7 @@ print(keyword.kwlist)
 
 
 
-# 变量：
+# ***四，变量***
 
 ⚠️ 第一层：变量不是“盒子”，是“标签”（这是必须扭转的概念）
 
@@ -288,7 +288,1040 @@ print(last)    # 输出：5
 
 
 
-# 可变与不可变对象：
+# ***五，文件格式***
+
+这是一个非常宏大的问题，计算机世界里的文件格式成千上万，没有人能真正穷举“所有”。但我可以为你系统地梳理**常见的、有代表性的文件格式**，按用途分类，帮你建立一个全局认知地图。
+
+
+
+📌 分类逻辑
+
+- 文本与数据交换：人类可读或结构化数据
+- 文档与排版：办公、出版、电子书
+- 图像：位图与矢量
+- 音频：未压缩、无损、有损
+- 视频与动画：容器与编码结合
+- 压缩与归档：打包与压缩
+- 可执行与库：程序与代码
+- 数据库与数据存储：结构化存储
+- 网页与网络：前端与互联网相关
+- 磁盘与系统：操作系统、虚拟机、磁盘映像
+- 字体：文字渲染
+- 其他专业领域：CAD、GIS、科学数据等
+
+
+
+
+
+---
+
+## 1. 纯文本与结构化数据
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| 纯文本 | `.txt` | 无格式文本 |
+| 富文本 | `.rtf` | 富文本格式 |
+| 标记语言 | `.md`, `.markdown` | Markdown |
+| 数据交换 | `.json` | JavaScript对象表示法 |
+| 数据交换 | `.xml` | 可扩展标记语言 |
+| 数据交换 | `.yaml`, `.yml` | 人类友好的数据序列化格式 |
+| 数据交换 | `.csv` | 逗号分隔值 |
+| 数据交换 | `.tsv` | 制表符分隔值 |
+| 数据交换 | `.toml` | Tom's Obvious, Minimal Language |
+| 数据交换 | `.properties` | Java属性文件 |
+| 配置文件 | `.ini`, `.cfg` | 配置文件 |
+| 日志 | `.log` | 通用日志文件 |
+
+
+
+## 2. 办公文档与排版
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| Microsoft Word | `.doc`, `.docx` | Word文档 |
+| Microsoft Excel | `.xls`, `.xlsx` | 电子表格 |
+| Microsoft PowerPoint | `.ppt`, `.pptx` | 演示文稿 |
+| OpenDocument | `.odt`, `.ods`, `.odp` | 开放文档格式 |
+| PDF | `.pdf` | 便携式文档格式 |
+| PostScript | `.ps` | 页面描述语言 |
+| EPUB | `.epub` | 电子书标准格式 |
+| MOBI | `.mobi` | Kindle电子书格式 |
+| AZW | `.azw`, `.azw3` | Amazon Kindle格式 |
+| DjVu | `.djvu` | 扫描文档压缩格式 |
+| LaTeX | `.tex` | 排版系统源文件 |
+| 中国文档标准 | `.uof`, `.ofd` | 国产文档格式 |
+
+
+
+## 3. 图像
+
+### 位图 (Raster)
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| JPEG | `.jpg`, `.jpeg` | 有损压缩，照片最常用 |
+| PNG | `.png` | 无损压缩，支持透明 |
+| GIF | `.gif` | 支持动画，256色 |
+| BMP | `.bmp` | Windows位图，无压缩/简单 |
+| TIFF | `.tif`, `.tiff` | 专业印刷、扫描 |
+| WebP | `.webp` | Google推出，有损/无损/动画 |
+| HEIF/HEIC | `.heic`, `.heif` | 高效图像格式（苹果设备） |
+| AVIF | `.avif` | 基于AV1的图像格式 |
+| RAW | `.raw`, `.cr2`, `.nef`, `.arw` | 相机原始数据（各品牌不同） |
+| ICO | `.ico` | 图标文件 |
+| PSD | `.psd` | Adobe Photoshop源文件 |
+
+### 矢量 (Vector)
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| SVG | `.svg` | 可缩放矢量图形 |
+| EPS | `.eps` | 封装PostScript |
+| AI | `.ai` | Adobe Illustrator |
+| CDR | `.cdr` | CorelDRAW |
+| WMF/EMF | `.wmf`, `.emf` | Windows图元文件 |
+
+
+
+## 4. 音频
+
+### 未压缩
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| WAV | `.wav` | 波形音频，无损 |
+| AIFF | `.aiff`, `.aif` | 苹果无损音频 |
+| PCM | `.pcm` | 原始脉冲编码调制 |
+
+### 无损压缩
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| FLAC | `.flac` | 自由无损音频 |
+| ALAC | `.m4a`, `.alac` | 苹果无损 |
+| APE | `.ape` | Monkey's Audio |
+| WavPack | `.wv` | 混合有损/无损模式 |
+
+### 有损压缩
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| MP3 | `.mp3` | MPEG音频层III |
+| AAC | `.aac`, `.m4a` | 高级音频编码 |
+| OGG Vorbis | `.ogg` | 开放有损格式 |
+| Opus | `.opus` | 低延迟、高质量 |
+| WMA | `.wma` | Windows Media Audio |
+
+### MIDI
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| MIDI | `.mid`, `.midi` | 乐器数字接口 |
+
+
+
+## 5. 视频与动画
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| MP4 | `.mp4` | 最通用的视频容器 |
+| AVI | `.avi` | 微软音视频交错 |
+| MOV | `.mov` | QuickTime容器 |
+| MKV | `.mkv` | Matroska多媒体容器 |
+| WMV | `.wmv` | Windows Media Video |
+| FLV | `.flv` | Flash视频 |
+| WebM | `.webm` | 开放网络视频 |
+| AVCHD | `.mts`, `.m2ts` | 高清视频（摄像机常用） |
+| 3GP | `.3gp` | 移动设备视频 |
+| GIF（动画） | `.gif` | 简单动画 |
+| APNG | `.apng` | 动画PNG |
+| SWF | `.swf` | Shockwave Flash |
+
+
+
+## 6. 压缩与归档
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| ZIP | `.zip` | 最通用的压缩包 |
+| RAR | `.rar` | WinRAR压缩格式 |
+| 7-Zip | `.7z` | 高压缩比 |
+| Gzip | `.gz` | GNU压缩（常配合tar） |
+| Tar | `.tar` | 归档（不压缩） |
+| Tar.gz/tgz | `.tar.gz`, `.tgz` | 归档+gzip压缩 |
+| Bzip2 | `.bz2` | 高压缩比（常配合tar） |
+| XZ/LZMA | `.xz` | 高压缩率（LZMA2） |
+| CAB | `.cab` | Windows Cabinet |
+| ISO | `.iso` | 光盘映像（也可归为磁盘） |
+| DMG | `.dmg` | macOS磁盘映像 |
+
+
+
+## 7. 可执行文件、库与脚本
+
+### Windows
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| 可执行程序 | `.exe` | 应用程序 |
+| 动态链接库 | `.dll` | 库文件 |
+| 批处理 | `.bat`, `.cmd` | 命令行脚本 |
+| PowerShell脚本 | `.ps1` | PowerShell脚本 |
+| 屏幕保护 | `.scr` | 本质是exe |
+| 安装包 | `.msi` | Windows安装包 |
+
+### Linux / Unix
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| 可执行二进制 | 无固定扩展名 | ELF格式 |
+| 共享库 | `.so` | 动态库 |
+| Shell脚本 | `.sh` | Bash等脚本 |
+
+### macOS
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| 应用程序包 | `.app` | 目录结构 |
+| 动态库 | `.dylib` | macOS动态库 |
+
+### 跨平台
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| Java字节码 | `.class` | Java类文件 |
+| Java归档 | `.jar` | Java打包 |
+| Python脚本 | `.py` | Python源代码 |
+| Python字节码 | `.pyc` | 编译后字节码 |
+
+
+
+## 8. 数据库与数据存储
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| SQLite | `.db`, `.sqlite` | 嵌入式数据库 |
+| Microsoft Access | `.mdb`, `.accdb` | Access数据库 |
+| MySQL dump | `.sql` | SQL导出文件 |
+| Berkeley DB | 无固定 | 嵌入式键值存储 |
+| 序列化数据 | `.dat`, `.pkl` | 程序私有数据 |
+
+
+
+## 9. 网页与网络
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| HTML | `.html`, `.htm` | 网页结构 |
+| CSS | `.css` | 层叠样式表 |
+| JavaScript | `.js` | 脚本语言 |
+| TypeScript | `.ts` | JS的超集 |
+| PHP | `.php` | 服务器脚本 |
+| ASP.NET | `.aspx` | 微软动态页 |
+| WebAssembly | `.wasm` | 浏览器字节码 |
+| 字体 | `.woff`, `.woff2` | Web开放字体 |
+| 证书 | `.crt`, `.pem`, `.key` | SSL/TLS证书与密钥 |
+
+
+
+## 10. 磁盘、虚拟化与系统映像
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| ISO 9660 | `.iso` | 光盘映像 |
+| VHD/VHDX | `.vhd`, `.vhdx` | 虚拟硬盘（Hyper-V） |
+| VMDK | `.vmdk` | 虚拟机磁盘（VMware） |
+| QCOW2 | `.qcow2` | QEMU副本写入 |
+| VDI | `.vdi` | VirtualBox磁盘映像 |
+| IMG | `.img` | 原始磁盘映像 |
+| DMG | `.dmg` | macOS磁盘映像 |
+| WIM | `.wim` | Windows映像格式 |
+
+
+
+## 11. 字体
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| TrueType | `.ttf` | 通用字体 |
+| OpenType | `.otf` | 增强字体格式 |
+| Web Open Font | `.woff`, `.woff2` | 网页字体 |
+| Embedded OpenType | `.eot` | 微软网页字体（旧） |
+| PostScript Type1 | `.pfb`, `.pfm` | 旧式打印机字体 |
+
+
+
+## 12. 专业/工程/科学
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| AutoCAD | `.dwg`, `.dxf` | CAD设计 |
+| 3D模型 | `.obj`, `.stl`, `.fbx`, `.blend` | 三维模型与打印 |
+| MATLAB | `.mat` | 科学数据 |
+| HDF5 | `.h5`, `.hdf5` | 层次数据格式 |
+| NetCDF | `.nc` | 科学数组数据 |
+| FITS | `.fits` | 天文数据 |
+| GeoTIFF | `.tif` + 地理头 | 地理空间图像 |
+| KML/KMZ | `.kml`, `.kmz` | Google Earth |
+| GPX | `.gpx` | GPS数据交换 |
+| Gerber | `.gbr`, `.gerber` | PCB电路板制造 |
+| 医学影像 | `.dcm` (DICOM) | 医学数字成像 |
+
+
+
+## 13. 其他常见杂项
+
+| 格式 | 扩展名 | 说明 |
+| :--- | :--- | :--- |
+| 电子书 | `.fb2` | FictionBook |
+| 漫画 | `.cbr`, `.cbz` | 压缩包封装的漫画 |
+| 字幕 | `.srt`, `.ass`, `.sub` | 视频字幕 |
+| 光盘映像 | `.bin`, `.cue` | 二进制映像+描述文件 |
+| 密码数据库 | `.kdbx` | KeePass密码管理器 |
+| 邮件存储 | `.pst` (Outlook), `.mbox` | 电子邮件归档 |
+| 注册表 | `.reg` | Windows注册表导出 |
+| 脚本/宏 | `.vbs`, `.ahk` | VBScript, AutoHotkey |
+
+
+---
+
+## 🧠 结尾思考
+
+你看到的只是“主流格式”的冰山一角。**文件格式本质上是数据的组织规则**——定义好了如何存储、如何解析。只要愿意，任何人和组织都可以设计自己的格式（用特定扩展名或魔数来识别）。
+
+如果你对**某一种格式的内部结构**或者**如何用代码读写它**感兴趣，可以继续提问，我们可以深入解剖。
+
+
+
+
+
+# ***六，数值类型***
+
+Python 的数值类型体系比较丰富，下面是各种类型的对比表格，方便你快速查阅。
+
+| 类型 | 定义方式 | 特点 | 注意事项 |
+| :--- | :--- | :--- | :--- |
+| **整数（int）** | 直接写数字，如 `a = 10` | 无大小限制，支持任意大整数 | 除法 `/` 总是返回 float，整除用 `//` |
+| **浮点数（float）** | 带小数点或科学计数法，如 `3.14`、`2.99e8` | 双精度 64 位，符合 IEEE 754 标准 | `0.1 + 0.2 != 0.3`，比较时用 `math.isclose()` |
+| **复数（complex）** | `2 + 3j`，虚部用 `j` | 支持 `real` 和 `imag` 属性 | 数学函数用 `cmath` 模块，不是 `math` |
+| **Decimal** | `Decimal('0.1')` | 精确十进制运算，适合财务计算 | 必须从字符串创建，速度比 float 慢 |
+| **Fraction** | `Fraction(1, 3)` | 精确分数表示，自动约分 | 适合数论、概率计算等需要精确比例的场景 |
+| **布尔值（bool）** | `True` / `False` | `bool` 是 `int` 的子类，`True == 1` | 可参与算术运算，但逻辑上应独立使用 |
+
+
+## 进制表示与转换
+
+| 进制 | 前缀 | 示例 | 转换函数 |
+| :--- | :--- | :--- | :--- |
+| 二进制 | `0b` | `0b1101` → 13 | `bin()` |
+| 八进制 | `0o` | `0o77` → 63 | `oct()` |
+| 十六进制 | `0x` | `0xFF` → 255 | `hex()` |
+
+
+## 类型转换速查
+
+| 目标类型 | 函数 | 示例 |
+| :--- | :--- | :--- |
+| 整数 | `int()` | `int(3.9)` → 3（截断，不是四舍五入） |
+| 浮点数 | `float()` | `float(42)` → 42.0 |
+| 复数 | `complex()` | `complex(2, 3)` → (2+3j) |
+
+
+## 浮点数安全比较
+
+```python
+
+import math
+math.isclose(0.1 + 0.2, 0.3)  # True
+```
+
+## 精确计算示例
+
+当需要绝对精确的十进制计算（如金额）时，用 `Decimal`；当需要精确分数时，用 `Fraction`：
+
+```python
+
+from decimal import Decimal
+Decimal('0.1') + Decimal('0.2')  # Decimal('0.3')
+
+from fractions import Fraction
+Fraction(6, 8)  # 3/4
+```
+
+
+
+
+# ***七，字符串***
+
+## 1. 字符串的定义
+
+Python 中字符串是 **不可变的 Unicode 序列**。用单引号、双引号或三引号定义。
+
+```python
+
+s1 = 'hello'
+s2 = "world"
+s3 = '''多行
+字符串'''
+s4 = """也支持
+多行"""
+```
+
+单引号和双引号完全等价，内部包含引号时交替使用可避免转义。
+
+三引号常用于文档字符串（docstring）或多行注释。
+
+
+## 2. 转义字符
+
+| 转义序列 | 含义 | 示例 |
+| :--- | :--- | :--- |
+| `\n` | 换行 | `print("A\nB")` → A 换行 B |
+| `\t` | 制表符（Tab） | `print("A\tB")` → A     B |
+| `\\` | 输出一个反斜杠 | `print("C:\\Users")` → `C:\Users` |
+| `\'` | 在单引号字符串中输出单引号 | `print('It\'s ok')` → It's ok |
+| `\"` | 在双引号字符串中输出双引号 | `print("He said \"Hi\"")` → He said "Hi" |
+| `\xhh` | 十六进制字符 | `print('\x41')` → A |
+| `\uhhhh` | 16位 Unicode 字符 | `print('\u4f60')` → 你 |
+| `\Uhhhhhhhh` | 32位 Unicode 字符 | `print('\U0001F600')` → 😀 |
+
+```python
+
+path = r"C:\Users\name"
+pattern = r"\d+\.\d+" #正则表达式
+```
+
+
+## 3. 基本操作
+
+| 操作 | 示例 | 结果 |
+| :--- | :--- | :--- |
+| 拼接 | `"Py" + "thon"` | `'Python'` |
+| 重复 | `"Ha" * 3` | `'HaHaHa'` |
+| 索引（正） | `s[0]` | 第一个字符 |
+| 索引（负） | `s[-1]` | 最后一个字符 |
+| 切片 | `s[7:9]` | 取索引 7 到 8（左闭右开） |
+| 切片步长 | `s[::2]` | 隔一个取一个 |
+| 成员检查 | `'ell' in s` | `True` |
+| 长度 | `len(s)` | 字符数（Unicode 计数） |
+
+---
+
+## 4. 常用字符串方法
+
+| 方法 | 说明 | 示例 |
+| :--- | :--- | :--- |
+| `lower()` / `upper()` | 大小写转换 | `"Python".upper()` → `'PYTHON'` |
+| `capitalize()` / `title()` | 首字母大写 / 单词首字母大写 | `"hello world".title()` → `'Hello World'` |
+| `strip()` | 移除两端空白（包括空格、换行、制表符） | `"  hi\n".strip()` → `'hi'` |
+| `split(sep)` | 按分隔符切分成列表 | `"a,b,c".split(",")` → `['a','b','c']` |
+| `join(iterable)` | 用字符串连接可迭代对象 | `",".join(['a','b'])` → `'a,b'` |
+| `replace(old, new)` | 替换子串 | `"ok ok".replace("ok","yes")` → `'yes yes'` |
+| `find(sub)` | 查找子串，返回索引，未找到返回 `-1` | `"hello".find("ll")` → `2` |
+| `startswith(prefix)` | 判断是否以某前缀开头 | `"img.png".startswith("img")` → `True` |
+| `endswith(suffix)` | 判断是否以某后缀结尾 | `"img.png".endswith(".png")` → `True` |
+| `isdigit()` | 是否全是数字 | `"123".isdigit()` → `True` |
+| `isalpha()` | 是否全是字母 | `"abc".isalpha()` → `True` |
+| `encode(encoding)` | 编码为字节串 | `"你好".encode("utf-8")` → `b'\xe4\xbd\xa0...'` |
+
+---
+
+## 5. 格式化字符串（重点）
+
+现代 Python 最推荐 **f-string**（Python 3.6+）：
+
+```python
+
+name = "Alice"
+age = 25
+print(f"My name is {name} and I'm {age} years old.")
+print(f"Pi is roughly {22/7:.2f}")           # 保留两位小数
+print(f"{42:06d}")                           # 输出：000042（6位，补零）
+```
+
+格式说明符格式：{变量名: 填充 对齐 宽度 .精度 类型}
+它遵循严格的顺序
+
+### 1. 填充（可选）
+
+当字符串或数字的宽度不够时，用指定字符补满剩余位置。
+
+- 默认填充字符是**空格**。
+- 可以指定其他字符，如 `0`、`*`、`-` 等。
+
+### 2. 对齐（可选）
+
+控制内容在给定宽度内靠左、靠右还是居中。
+
+| 对齐符号 | 含义 |
+| :--- | :--- |
+| `<` | 左对齐 |
+| `>` | 右对齐 |
+| `^` | 居中对齐 |
+**注意**：对齐通常需要与“宽度”配合使用，否则没有效果
+
+类型符号：b 二进制、x 十六进制、o 八进制、% 百分比。
+
+### 3. 宽度（可选）
+
+指定整个字段最少占用的字符位数。
+
+- 如果内容长度不够，就用“填充”字符补足。
+- 如果内容长度超过宽度，则**不会被截断**，会正常显示全部内容。
+
+### 4. `.精度`（可选）
+
+仅对浮点数有意义，表示小数点后保留几位。
+
+- 前面必须有一个点 `.`，例如 `.2f` 表示保留两位小数。
+
+### 5. 类型（可选）
+
+决定内容的最终显示格式。
+
+| 类型符号 | 含义 |
+| :--- | :--- |
+| `b` | 二进制 |
+| `x` | 十六进制（小写） |
+| `o` | 八进制 |
+| `%` | 百分比（数字乘以 100） |
+| `f` | 浮点数（固定小数位） |
+| `d` | 整数（十进制） |
+
+### 代码示例
+
+```python
+# 数字补零
+print(f"{42:05d}")          # 输出：00042
+
+# 字符串居中填充
+print(f"{'hello':*^10}")    # 输出：**hello***
+
+# 浮点数保留两位小数
+print(f"{3.14159:.2f}")     # 输出：3.14
+
+# 百分比
+print(f"{0.25:.1%}")        # 输出：25.0%
+```
+
+
+## 6. 编码与字节串
+
+区分 **字符串（str）** 和 **字节串（bytes）**。
+
+- str 是 Unicode 码点序列，用于处理文本。
+- bytes 是 0-255 整数序列，用于处理二进制数据（如图像、网络传输）。
+
+两者通过 encode() 和 decode() 互相转换：
+
+```python
+
+text = "Python ♥ 中文"
+data = text.encode("utf-8")   # b'Python \xe2\x99\xa5...'
+text2 = data.decode("utf-8")   # 还原为原字符串
+```
+
+重要提醒：处理文件读写时，务必指定 encoding="utf-8"，否则 Windows 下可能默认用 GBK 编码导致中文乱码。
+
+
+## 7. 遍历字符串
+
+```python
+
+for char in "abc":
+    print(char)
+
+# 需要索引时用 enumerate
+for i, ch in enumerate("世界"):
+    print(i, ch)   # 0 '世', 1 '界'
+```
+enumerate 的作用是：让你在循环中同时拿到“当前是第几个”和“当前是什么”。
+如果你不用 enumerate，你想知道“当前是第几个元素”时，就得手动维护一个计数器：
+
+```python
+
+i = 0
+for ch in "世界":
+    print(i, ch)
+    i += 1
+```
+这样写虽然也能达到同样的效果，但更啰嗦，而且如果循环里面加了 continue 或 break，i 的累加逻辑容易出错。
+
+
+## 8. 字符串的不可变性
+
+每次操作字符串都是生成新对象，原字符串不会改变：
+
+```python
+
+s = "Hello"
+s.upper()      # 返回 "HELLO"，但 s 还是 "Hello"
+print(s)       # "Hello"
+```
+
+性能提示：若需频繁拼接大量字符串（如循环中），请使用 list 收集后用 ''.join()，避免产生大量临时对象导致效率低下。
+
+
+## 9. 字符串与文件处理
+```python
+
+with open("test.txt", "r", encoding="utf-8") as f:
+    content = f.read()       # 整个文件读成字符串
+    lines = f.readlines()    # 按行读成字符串列表
+
+with open("out.txt", "w", encoding="utf-8") as f:
+    f.write("Hello, 世界!")
+```
+
+
+## 10. 相关标准库模块
+
+| 模块 | 用途 |
+| :--- | :--- |
+| `string` | 提供字符串常量（`ascii_letters`, `digits`, `punctuation` 等）和模板 `Template` |
+| `re` | 正则表达式：搜索、替换、匹配模式 |
+| `textwrap` | 段落自动换行、缩进、截断等 |
+| `difflib` | 计算两个字符串序列差异 |
+| `unicodedata` | 查询 Unicode 字符属性 |
+
+
+
+
+
+# ***八，运算符***
+
+
+## 1. 算数运算符
+
+你已经知道 `+ - * /`，但 Python 里还有三个你可能没完全摸透的运算符：`//`、`%`、`**`。
+
+| 运算符 | 名称 | 示例 | 结果 |
+| :--- | :--- | :--- | :--- |
+| `//` | 整除（向下取整） | `10 // 3` | `3` |
+| `%` | 取余（模运算） | `10 % 3` | `1` |
+| `**` | 幂运算 | `2 ** 3` | `8` |
+
+硬核细节 1：`/` 永远返回浮点数
+
+```python
+
+print(10 / 2)   # 输出：5.0（不是整数！）
+print(10 // 2)  # 输出：5（整数）
+```
+如果你需要整数结果，必须用 //，而不是 int(10/2)。
+
+硬核细节 2：// 是“向下取整”，不是“截断取整”（新手最易踩的坑）
+
+```python
+
+print(10 // 3)   # 输出：3（3.333 向下取整 -> 3）
+print(-10 // 3)  # 输出：-4（-3.333 向下取整 -> -4，因为 -4 < -3.333）
+```
+
+很多语言（如 C/Java）是“向零取整”，但 Python 是“向下取整（floor）”。如果你需要“向零取整”，可以用 int(-10 / 3)（结果是 -3）。
+
+硬核细节 3：% 的结果符号跟随除数（分母）
+
+```python
+
+print(10 % 3)    # 输出：1
+print(-10 % 3)   # 输出：2（因为 -10 = (-4)*3 + 2）
+print(10 % -3)   # 输出：-1（因为 10 = (-3)*(-3) + 1？不，结果是 -1）
+```
+公式：a % b = a - (a // b) * b。
+只要记住：结果的符号与除数相同，且结果的绝对值小于除数。
+
+
+## 2.赋值运算符
+
+| 运算符 | 例子 | 等价于 |
+| :--- | :--- | :--- |
+| `+=` | `a += 5` | `a = a + 5` |
+| `-=` | `a -= 5` | `a = a - 5` |
+| `*=` | `a *= 5` | `a = a * 5` |
+| `/=` | `a /= 5` | `a = a / 5` |
+| `//=` | `a //= 5` | `a = a // 5` |
+| `%=` | `a %= 5` | `a = a % 5` |
+| `**=` | `a **= 5` | `a = a ** 5` |
+
+硬核细节 1：+= 对可变类型和不可变类型的行为不同（复习第二项）
+
+对整数、字符串（不可变）：a += b 相当于 a = a + b，创建新对象。
+
+对列表（可变）：a += b 相当于 a.extend(b)，原地修改，不会创建新列表。
+
+```python
+
+# 对列表：
+a = [1, 2]
+b = a
+a += [3]
+print(b)   # 输出：[1, 2, 3]（b 也被改了，因为是原地修改）
+```
+
+硬核细节 2：链式赋值
+
+```python
+
+a = b = c = 0
+```
+等价于：
+
+```python
+
+c = 0
+b = c
+a = b
+```
+
+三个变量都指向同一个整数对象 0（整数是不可变的，所以安全）。
+
+
+## 3.比较运算符
+
+== 等于 | != 不等于    |  > 大于
+< 小于  |  >= 大于等于 | <= 小于等于
+
+硬核细节 1：比较运算符可以“链式”写（Python 独有特性）
+
+```python
+
+# 在其他语言里，你只能写成：
+if x > 0 and x < 10:
+    pass
+
+# 在 Python 里，你可以直接写成：
+if 0 < x < 10:
+    pass
+```
+
+Python 会把 0 < x < 10 解析为 0 < x and x < 10。这种写法在数学公式中非常直观，也是 Python 代码简洁性的体现。
+
+硬核细节 2：字符串比较是“按字典序（Unicode 码点）”逐个字符比较
+
+```python
+
+print("apple" < "banana")   # True（a < b）
+print("苹果" < "香蕉")       # 按 Unicode 码点比较，不按拼音
+```
+
+比较规则：从左到右，依次比较第一个不同字符的码点大小。如果所有字符相同，则较短的字符串较小（"abc" < "abcd" 为 True）。
+
+硬核细节 3：不同数据类型比较会直接报错（Python 3 严格禁止）
+
+```python
+
+print(1 > "2")   # TypeError: '>' not supported between instances of 'int' and 'str'
+```
+
+Python 2 允许这种行为（数字会隐式转成字符串比较），但 Python 3 已经彻底移除，这是好事——它强制你显式转换类型，避免隐蔽 bug。
+
+
+## 4.逻辑运算符(and,or,not)
+
+硬核细节 1:短路求值
+
+and：如果左边是 False，右边根本不会执行。
+
+or：如果左边是 True，右边根本不会执行。
+
+```python
+
+def test():
+    print("我被执行了")
+    return True
+
+# 左边是 True，or 直接短路，test() 不会被调用
+if True or test():
+    print("走了 or 分支")
+# 输出：走了 or 分支（没有打印“我被执行了”）
+```
+
+这个特性在写“防御性代码”时非常有用，比如 if user and user.is_active:，如果 user 是 None，or/and 不会尝试访问 user.is_active，从而避免了 AttributeError。
+
+硬核细节 2: and 和 or 返回的是“最后求值的那个操作数”，而不是纯粹的 True/False
+
+```python
+
+print(0 and 5)    # 输出：0（因为 0 是假，and 短路，直接返回 0）
+print(3 and 5)    # 输出：5（因为 3 是真，and 继续求值，返回第二个操作数 5）
+print(0 or 5)     # 输出：5（因为 0 是假，or 短路，返回第二个操作数 5）
+print(3 or 5)     # 输出：3（因为 3 是真，or 短路，直接返回第一个操作数 3）
+```
+
+也就是说，and 和 or 不负责把结果转换成布尔值，它们只是“选择”一个操作数返回。你平时把它们放在 if 语句里使用时，if 会自动把这些返回值当成布尔值来判断。
+
+硬核细节 3：not 返回的是布尔值（和 and/or 不同）
+
+```python
+
+print(not 0)   # True
+print(not 5)   # False
+```
+
+not 永远返回 True 或 False，因为它是一个取反操作。
+
+硬核细节 4：优先级顺序（从小到大排列）
+优先级从高到低：not,and,or
+
+```python
+
+# 不用记，直接加括号即可
+if (x > 0 and y > 0) or z > 0:
+    pass
+```
+
+
+
+
+
+# ***九，判断类***
+
+
+## 1. if-elif-else（条件判断）
+
+基本结构：
+
+```python
+
+if 条件1:
+    # 条件1为真时执行
+elif 条件2:
+    # 条件1为假且条件2为真时执行
+else:
+    # 所有条件都为假时执行
+```
+
+硬核细节 1：elif 的本质是“嵌套的 if-else”的语法糖
+
+```python
+
+# 你写的：
+if a > 0:
+    print("正数")
+elif a == 0:
+    print("零")
+else:
+    print("负数")
+
+# 实际上等价于：
+if a > 0:
+    print("正数")
+else:
+    if a == 0:
+        print("零")
+    else:
+        print("负数")
+elif 让你的代码少了一层缩进，但底层逻辑完全一样。
+```
+
+硬核细节 2：if 条件判断的不是“布尔值”，而是“隐式布尔转换”
+
+Python 的 if 语句会自动将条件表达式的结果转换成布尔值，而不要求它必须是 True 或 False。
+
+被判定为 False 的值（Falsy）只有 8 种：
+None,False,数字 0（包括 0、0.0、0j）,空字符串 "",空列表 []
+空元组 (),空字典 {},空集合 set()
+
+除此以外，一切都被判定为 True。
+
+```python
+
+# 你见过这种写法：
+if user_name:   # 如果 user_name 不是空字符串，就认为它“存在”
+    print(f"你好，{user_name}")
+
+# 等价于：
+if user_name != "":
+    print(f"你好，{user_name}")
+```
+
+这种写法是 Python 里常见的“防御性检查”，可以在不额外处理空值的情况下简化逻辑。
+
+硬核细节 3：elif 的“短路”效应
+
+和 and/or 一样，if-elif-else 是从上到下依次检查的。一旦某个条件为真，后面的所有 elif 和 else 都会被直接跳过，不会再执行。
+
+```python
+
+x = 5
+if x > 0:
+    print("A")
+elif x > 2:   # 即使 x > 2 也为真，但因为上面已经执行了，这行永远不会触发
+    print("B")
+else:
+    print("C")
+# 输出：A（B 和 C 都不会执行）
+```
+
+这和多个独立的 if 不同（独立的 if 会逐一检查，不会短路）。
+
+
+## 2. try-except（异常处理）
+
+硬核细节 1：try-except 捕获的是“异常”，不是“错误”
+
+语法错误（SyntaxError）：代码写错了，连运行都进不去，try 救不了。
+
+运行时异常（Exception）：代码能运行，但运行中途出问题了（比如用户输入了非数字），try 可以捕获。
+
+```python
+
+# ❌ 语法错误，try 救不了
+try:
+    print("hello"   # 这里漏了右括号，程序根本跑不起来
+except:
+    pass
+
+# ✅ 运行时异常，try 可以捕获
+try:
+    num = int(input("请输入数字："))
+except ValueError:
+    print("输入的不是有效数字")
+```
+
+硬核细节 2：异常捕获的顺序是从具体到通用
+
+如果你写了多个 except 块，必须把最具体的异常写在最前面，否则会直接拦截掉所有更具体的异常。
+
+```python
+
+try:
+    num = int(input("请输入数字："))
+except ValueError:
+    print("输入的不是数字")
+except Exception as e:
+    print(f"其他错误：{e}")
+```
+
+如果反过来写（先 `except Exception`），那么 `ValueError` 也会被捕获到，后面的 except ValueError 永远不会执行。
+
+硬核细节 3：except 不捕获 KeyboardInterrupt 和 SystemExit
+
+KeyboardInterrupt 是用户按 Ctrl+C 触发的，SystemExit 是 sys.exit() 触发的。这两个异常不属于普通异常，它们代表“用户/程序要求退出”，而不是“程序出错了”。
+
+```python
+
+try:
+    while True:
+        print("运行中...")
+except KeyboardInterrupt:
+    print("用户按了 Ctrl+C，程序退出")
+```
+这是合理的用法，用于让程序能够优雅地响应中断。
+
+硬核细节 4：else 和 finally 在 try-except 中的意义
+
+else：当 try 块没有抛出任何异常时，执行 else 块。
+
+finally：无论是否抛出异常，最终都会执行（比如关闭文件、释放资源）。
+
+```python
+try:
+    file = open("data.txt", "r")
+except FileNotFoundError:
+    print("文件不存在")
+else:
+    print("文件读取成功")
+    content = file.read()
+finally:
+    print("清理中...")
+    file.close()
+```
+如果文件存在：执行 try → else → finally。
+
+如果文件不存在：执行 try（报错）→ except → finally。
+
+
+## 3. 三目运算（条件表达式）
+
+
+三目运算是在一行内完成“如果...否则...”的逻辑，常用于简化简单赋值。
+
+```python
+
+值1 if 条件 else 值2
+```
+
+如果条件为真，返回 值1；否则返回 值2。
+
+硬核细节 1：它必须有返回值（不能执行语句，只能返回表达式）
+
+```python
+
+# 正确（赋值）
+age = 18
+status = "成年" if age >= 18 else "未成年"
+
+# 错误（不能在里面写 print）
+age >= 18 else print("未成年")   # ❌ SyntaxError
+```
+
+硬核细节 2：可以嵌套，但可读性会下降
+
+```python
+
+score = 85
+grade = "优秀" if score >= 90 else ("良好" if score >= 70 else "及格")
+print(grade)   # 输出：良好
+```
+
+嵌套的三目运算虽然能写，但超过两层就会让人头大。建议如果逻辑超过两层，直接用传统的 if-elif-else。
+
+硬核细节 3：三目运算 vs if-else 块
+
+```python
+
+# if-else 块（可以执行多行代码）
+if age >= 18:
+    print("成年")
+    status = "成年"
+else:
+    print("未成年")
+    status = "未成年"
+
+# 三目运算（只能取一个值，不能执行语句）
+status = "成年" if age >= 18 else "未成年"
+```
+
+三目运算是“表达式”，不是“语句”。它必须返回一个值，而不能包含多个操作。
+
+
+
+
+
+# ***十，输入函数 input()***
+
+硬核细节 1：input() 返回的永远是字符串（str），哪怕你输入的是数字。
+
+```python
+
+age = input("请输入年龄：")
+print(type(age))   # 输出：<class 'str'>
+```
+
+如果你拿 age 去比较大小（age > 18），会直接报错：TypeError: '>' not supported between instances of 'str' and 'int'。
+
+正确写法：
+
+```python
+
+age = int(input("请输入年龄："))   # 必须手动转成整数
+```
+
+硬核细节 2：如果用户输入了非数字内容，int() 会直接崩溃（ValueError）。
+
+```python
+
+age = int(input("请输入年龄："))   # 用户输入了 "abc"
+# 报错：ValueError: invalid literal for int() with base 10: 'abc'
+```
+
+
+
+
+
+# ***十一，可变与不可变对象***
 
 对于不可变类型（整数、字符串、元组），修改旧变量，新变量不会变（因为是“撕贴纸”操作）。
 
@@ -450,7 +1483,16 @@ print(b)      # 输出：\[1, 2, 3, 4]（b 跟着变了）
 
 
 
-# ***模块***
+# ***十二，循环类***
+
+
+## 1，for
+
+
+
+
+
+# ***十三，模块***
 
 
 
@@ -886,1035 +1928,3 @@ print(b)      # 输出：\[1, 2, 3, 4]（b 跟着变了）
 | `pefile` | 解析 Windows PE (Portable Executable) 文件格式的库 |
 | `peutils` | `pefile` 的辅助工具库 |
 | `file_organizer` | 可能是一个自定义或第三方文件整理工具 |
-
-
-
-
-
-# ***文件格式***
-
-这是一个非常宏大的问题，计算机世界里的文件格式成千上万，没有人能真正穷举“所有”。但我可以为你系统地梳理**常见的、有代表性的文件格式**，按用途分类，帮你建立一个全局认知地图。
-
-
-
-📌 分类逻辑
-
-- 文本与数据交换：人类可读或结构化数据
-- 文档与排版：办公、出版、电子书
-- 图像：位图与矢量
-- 音频：未压缩、无损、有损
-- 视频与动画：容器与编码结合
-- 压缩与归档：打包与压缩
-- 可执行与库：程序与代码
-- 数据库与数据存储：结构化存储
-- 网页与网络：前端与互联网相关
-- 磁盘与系统：操作系统、虚拟机、磁盘映像
-- 字体：文字渲染
-- 其他专业领域：CAD、GIS、科学数据等
-
-
-
-
-
----
-
-## 1. 纯文本与结构化数据
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| 纯文本 | `.txt` | 无格式文本 |
-| 富文本 | `.rtf` | 富文本格式 |
-| 标记语言 | `.md`, `.markdown` | Markdown |
-| 数据交换 | `.json` | JavaScript对象表示法 |
-| 数据交换 | `.xml` | 可扩展标记语言 |
-| 数据交换 | `.yaml`, `.yml` | 人类友好的数据序列化格式 |
-| 数据交换 | `.csv` | 逗号分隔值 |
-| 数据交换 | `.tsv` | 制表符分隔值 |
-| 数据交换 | `.toml` | Tom's Obvious, Minimal Language |
-| 数据交换 | `.properties` | Java属性文件 |
-| 配置文件 | `.ini`, `.cfg` | 配置文件 |
-| 日志 | `.log` | 通用日志文件 |
-
-
-
-## 2. 办公文档与排版
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| Microsoft Word | `.doc`, `.docx` | Word文档 |
-| Microsoft Excel | `.xls`, `.xlsx` | 电子表格 |
-| Microsoft PowerPoint | `.ppt`, `.pptx` | 演示文稿 |
-| OpenDocument | `.odt`, `.ods`, `.odp` | 开放文档格式 |
-| PDF | `.pdf` | 便携式文档格式 |
-| PostScript | `.ps` | 页面描述语言 |
-| EPUB | `.epub` | 电子书标准格式 |
-| MOBI | `.mobi` | Kindle电子书格式 |
-| AZW | `.azw`, `.azw3` | Amazon Kindle格式 |
-| DjVu | `.djvu` | 扫描文档压缩格式 |
-| LaTeX | `.tex` | 排版系统源文件 |
-| 中国文档标准 | `.uof`, `.ofd` | 国产文档格式 |
-
-
-
-## 3. 图像
-
-### 位图 (Raster)
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| JPEG | `.jpg`, `.jpeg` | 有损压缩，照片最常用 |
-| PNG | `.png` | 无损压缩，支持透明 |
-| GIF | `.gif` | 支持动画，256色 |
-| BMP | `.bmp` | Windows位图，无压缩/简单 |
-| TIFF | `.tif`, `.tiff` | 专业印刷、扫描 |
-| WebP | `.webp` | Google推出，有损/无损/动画 |
-| HEIF/HEIC | `.heic`, `.heif` | 高效图像格式（苹果设备） |
-| AVIF | `.avif` | 基于AV1的图像格式 |
-| RAW | `.raw`, `.cr2`, `.nef`, `.arw` | 相机原始数据（各品牌不同） |
-| ICO | `.ico` | 图标文件 |
-| PSD | `.psd` | Adobe Photoshop源文件 |
-
-### 矢量 (Vector)
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| SVG | `.svg` | 可缩放矢量图形 |
-| EPS | `.eps` | 封装PostScript |
-| AI | `.ai` | Adobe Illustrator |
-| CDR | `.cdr` | CorelDRAW |
-| WMF/EMF | `.wmf`, `.emf` | Windows图元文件 |
-
-
-
-## 4. 音频
-
-### 未压缩
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| WAV | `.wav` | 波形音频，无损 |
-| AIFF | `.aiff`, `.aif` | 苹果无损音频 |
-| PCM | `.pcm` | 原始脉冲编码调制 |
-
-### 无损压缩
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| FLAC | `.flac` | 自由无损音频 |
-| ALAC | `.m4a`, `.alac` | 苹果无损 |
-| APE | `.ape` | Monkey's Audio |
-| WavPack | `.wv` | 混合有损/无损模式 |
-
-### 有损压缩
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| MP3 | `.mp3` | MPEG音频层III |
-| AAC | `.aac`, `.m4a` | 高级音频编码 |
-| OGG Vorbis | `.ogg` | 开放有损格式 |
-| Opus | `.opus` | 低延迟、高质量 |
-| WMA | `.wma` | Windows Media Audio |
-
-### MIDI
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| MIDI | `.mid`, `.midi` | 乐器数字接口 |
-
-
-
-## 5. 视频与动画
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| MP4 | `.mp4` | 最通用的视频容器 |
-| AVI | `.avi` | 微软音视频交错 |
-| MOV | `.mov` | QuickTime容器 |
-| MKV | `.mkv` | Matroska多媒体容器 |
-| WMV | `.wmv` | Windows Media Video |
-| FLV | `.flv` | Flash视频 |
-| WebM | `.webm` | 开放网络视频 |
-| AVCHD | `.mts`, `.m2ts` | 高清视频（摄像机常用） |
-| 3GP | `.3gp` | 移动设备视频 |
-| GIF（动画） | `.gif` | 简单动画 |
-| APNG | `.apng` | 动画PNG |
-| SWF | `.swf` | Shockwave Flash |
-
-
-
-## 6. 压缩与归档
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| ZIP | `.zip` | 最通用的压缩包 |
-| RAR | `.rar` | WinRAR压缩格式 |
-| 7-Zip | `.7z` | 高压缩比 |
-| Gzip | `.gz` | GNU压缩（常配合tar） |
-| Tar | `.tar` | 归档（不压缩） |
-| Tar.gz/tgz | `.tar.gz`, `.tgz` | 归档+gzip压缩 |
-| Bzip2 | `.bz2` | 高压缩比（常配合tar） |
-| XZ/LZMA | `.xz` | 高压缩率（LZMA2） |
-| CAB | `.cab` | Windows Cabinet |
-| ISO | `.iso` | 光盘映像（也可归为磁盘） |
-| DMG | `.dmg` | macOS磁盘映像 |
-
-
-
-## 7. 可执行文件、库与脚本
-
-### Windows
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| 可执行程序 | `.exe` | 应用程序 |
-| 动态链接库 | `.dll` | 库文件 |
-| 批处理 | `.bat`, `.cmd` | 命令行脚本 |
-| PowerShell脚本 | `.ps1` | PowerShell脚本 |
-| 屏幕保护 | `.scr` | 本质是exe |
-| 安装包 | `.msi` | Windows安装包 |
-
-### Linux / Unix
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| 可执行二进制 | 无固定扩展名 | ELF格式 |
-| 共享库 | `.so` | 动态库 |
-| Shell脚本 | `.sh` | Bash等脚本 |
-
-### macOS
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| 应用程序包 | `.app` | 目录结构 |
-| 动态库 | `.dylib` | macOS动态库 |
-
-### 跨平台
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| Java字节码 | `.class` | Java类文件 |
-| Java归档 | `.jar` | Java打包 |
-| Python脚本 | `.py` | Python源代码 |
-| Python字节码 | `.pyc` | 编译后字节码 |
-
-
-
-## 8. 数据库与数据存储
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| SQLite | `.db`, `.sqlite` | 嵌入式数据库 |
-| Microsoft Access | `.mdb`, `.accdb` | Access数据库 |
-| MySQL dump | `.sql` | SQL导出文件 |
-| Berkeley DB | 无固定 | 嵌入式键值存储 |
-| 序列化数据 | `.dat`, `.pkl` | 程序私有数据 |
-
-
-
-## 9. 网页与网络
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| HTML | `.html`, `.htm` | 网页结构 |
-| CSS | `.css` | 层叠样式表 |
-| JavaScript | `.js` | 脚本语言 |
-| TypeScript | `.ts` | JS的超集 |
-| PHP | `.php` | 服务器脚本 |
-| ASP.NET | `.aspx` | 微软动态页 |
-| WebAssembly | `.wasm` | 浏览器字节码 |
-| 字体 | `.woff`, `.woff2` | Web开放字体 |
-| 证书 | `.crt`, `.pem`, `.key` | SSL/TLS证书与密钥 |
-
-
-
-## 10. 磁盘、虚拟化与系统映像
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| ISO 9660 | `.iso` | 光盘映像 |
-| VHD/VHDX | `.vhd`, `.vhdx` | 虚拟硬盘（Hyper-V） |
-| VMDK | `.vmdk` | 虚拟机磁盘（VMware） |
-| QCOW2 | `.qcow2` | QEMU副本写入 |
-| VDI | `.vdi` | VirtualBox磁盘映像 |
-| IMG | `.img` | 原始磁盘映像 |
-| DMG | `.dmg` | macOS磁盘映像 |
-| WIM | `.wim` | Windows映像格式 |
-
-
-
-## 11. 字体
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| TrueType | `.ttf` | 通用字体 |
-| OpenType | `.otf` | 增强字体格式 |
-| Web Open Font | `.woff`, `.woff2` | 网页字体 |
-| Embedded OpenType | `.eot` | 微软网页字体（旧） |
-| PostScript Type1 | `.pfb`, `.pfm` | 旧式打印机字体 |
-
-
-
-## 12. 专业/工程/科学
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| AutoCAD | `.dwg`, `.dxf` | CAD设计 |
-| 3D模型 | `.obj`, `.stl`, `.fbx`, `.blend` | 三维模型与打印 |
-| MATLAB | `.mat` | 科学数据 |
-| HDF5 | `.h5`, `.hdf5` | 层次数据格式 |
-| NetCDF | `.nc` | 科学数组数据 |
-| FITS | `.fits` | 天文数据 |
-| GeoTIFF | `.tif` + 地理头 | 地理空间图像 |
-| KML/KMZ | `.kml`, `.kmz` | Google Earth |
-| GPX | `.gpx` | GPS数据交换 |
-| Gerber | `.gbr`, `.gerber` | PCB电路板制造 |
-| 医学影像 | `.dcm` (DICOM) | 医学数字成像 |
-
-
-
-## 13. 其他常见杂项
-
-| 格式 | 扩展名 | 说明 |
-| :--- | :--- | :--- |
-| 电子书 | `.fb2` | FictionBook |
-| 漫画 | `.cbr`, `.cbz` | 压缩包封装的漫画 |
-| 字幕 | `.srt`, `.ass`, `.sub` | 视频字幕 |
-| 光盘映像 | `.bin`, `.cue` | 二进制映像+描述文件 |
-| 密码数据库 | `.kdbx` | KeePass密码管理器 |
-| 邮件存储 | `.pst` (Outlook), `.mbox` | 电子邮件归档 |
-| 注册表 | `.reg` | Windows注册表导出 |
-| 脚本/宏 | `.vbs`, `.ahk` | VBScript, AutoHotkey |
-
-
----
-
-## 🧠 结尾思考
-
-你看到的只是“主流格式”的冰山一角。**文件格式本质上是数据的组织规则**——定义好了如何存储、如何解析。只要愿意，任何人和组织都可以设计自己的格式（用特定扩展名或魔数来识别）。
-
-如果你对**某一种格式的内部结构**或者**如何用代码读写它**感兴趣，可以继续提问，我们可以深入解剖。
-
-
-
-
-
-# *数值类型*
-
-Python 的数值类型体系比较丰富，下面是各种类型的对比表格，方便你快速查阅。
-
-| 类型 | 定义方式 | 特点 | 注意事项 |
-| :--- | :--- | :--- | :--- |
-| **整数（int）** | 直接写数字，如 `a = 10` | 无大小限制，支持任意大整数 | 除法 `/` 总是返回 float，整除用 `//` |
-| **浮点数（float）** | 带小数点或科学计数法，如 `3.14`、`2.99e8` | 双精度 64 位，符合 IEEE 754 标准 | `0.1 + 0.2 != 0.3`，比较时用 `math.isclose()` |
-| **复数（complex）** | `2 + 3j`，虚部用 `j` | 支持 `real` 和 `imag` 属性 | 数学函数用 `cmath` 模块，不是 `math` |
-| **Decimal** | `Decimal('0.1')` | 精确十进制运算，适合财务计算 | 必须从字符串创建，速度比 float 慢 |
-| **Fraction** | `Fraction(1, 3)` | 精确分数表示，自动约分 | 适合数论、概率计算等需要精确比例的场景 |
-| **布尔值（bool）** | `True` / `False` | `bool` 是 `int` 的子类，`True == 1` | 可参与算术运算，但逻辑上应独立使用 |
-
-
-## 进制表示与转换
-
-| 进制 | 前缀 | 示例 | 转换函数 |
-| :--- | :--- | :--- | :--- |
-| 二进制 | `0b` | `0b1101` → 13 | `bin()` |
-| 八进制 | `0o` | `0o77` → 63 | `oct()` |
-| 十六进制 | `0x` | `0xFF` → 255 | `hex()` |
-
-
-## 类型转换速查
-
-| 目标类型 | 函数 | 示例 |
-| :--- | :--- | :--- |
-| 整数 | `int()` | `int(3.9)` → 3（截断，不是四舍五入） |
-| 浮点数 | `float()` | `float(42)` → 42.0 |
-| 复数 | `complex()` | `complex(2, 3)` → (2+3j) |
-
-
-## 浮点数安全比较
-
-```python
-
-import math
-math.isclose(0.1 + 0.2, 0.3)  # True
-```
-
-## 精确计算示例
-
-当需要绝对精确的十进制计算（如金额）时，用 `Decimal`；当需要精确分数时，用 `Fraction`：
-
-```python
-
-from decimal import Decimal
-Decimal('0.1') + Decimal('0.2')  # Decimal('0.3')
-
-from fractions import Fraction
-Fraction(6, 8)  # 3/4
-```
-
-
-
-
-# 字符串
-
-## 1. 字符串的定义
-
-Python 中字符串是 **不可变的 Unicode 序列**。用单引号、双引号或三引号定义。
-
-```python
-
-s1 = 'hello'
-s2 = "world"
-s3 = '''多行
-字符串'''
-s4 = """也支持
-多行"""
-```
-
-单引号和双引号完全等价，内部包含引号时交替使用可避免转义。
-
-三引号常用于文档字符串（docstring）或多行注释。
-
-
-## 2. 转义字符
-
-| 转义序列 | 含义 | 示例 |
-| :--- | :--- | :--- |
-| `\n` | 换行 | `print("A\nB")` → A 换行 B |
-| `\t` | 制表符（Tab） | `print("A\tB")` → A     B |
-| `\\` | 输出一个反斜杠 | `print("C:\\Users")` → `C:\Users` |
-| `\'` | 在单引号字符串中输出单引号 | `print('It\'s ok')` → It's ok |
-| `\"` | 在双引号字符串中输出双引号 | `print("He said \"Hi\"")` → He said "Hi" |
-| `\xhh` | 十六进制字符 | `print('\x41')` → A |
-| `\uhhhh` | 16位 Unicode 字符 | `print('\u4f60')` → 你 |
-| `\Uhhhhhhhh` | 32位 Unicode 字符 | `print('\U0001F600')` → 😀 |
-
-```python
-
-path = r"C:\Users\name"
-pattern = r"\d+\.\d+" #正则表达式
-```
-
-
-## 3. 基本操作
-
-| 操作 | 示例 | 结果 |
-| :--- | :--- | :--- |
-| 拼接 | `"Py" + "thon"` | `'Python'` |
-| 重复 | `"Ha" * 3` | `'HaHaHa'` |
-| 索引（正） | `s[0]` | 第一个字符 |
-| 索引（负） | `s[-1]` | 最后一个字符 |
-| 切片 | `s[7:9]` | 取索引 7 到 8（左闭右开） |
-| 切片步长 | `s[::2]` | 隔一个取一个 |
-| 成员检查 | `'ell' in s` | `True` |
-| 长度 | `len(s)` | 字符数（Unicode 计数） |
-
----
-
-## 4. 常用字符串方法
-
-| 方法 | 说明 | 示例 |
-| :--- | :--- | :--- |
-| `lower()` / `upper()` | 大小写转换 | `"Python".upper()` → `'PYTHON'` |
-| `capitalize()` / `title()` | 首字母大写 / 单词首字母大写 | `"hello world".title()` → `'Hello World'` |
-| `strip()` | 移除两端空白（包括空格、换行、制表符） | `"  hi\n".strip()` → `'hi'` |
-| `split(sep)` | 按分隔符切分成列表 | `"a,b,c".split(",")` → `['a','b','c']` |
-| `join(iterable)` | 用字符串连接可迭代对象 | `",".join(['a','b'])` → `'a,b'` |
-| `replace(old, new)` | 替换子串 | `"ok ok".replace("ok","yes")` → `'yes yes'` |
-| `find(sub)` | 查找子串，返回索引，未找到返回 `-1` | `"hello".find("ll")` → `2` |
-| `startswith(prefix)` | 判断是否以某前缀开头 | `"img.png".startswith("img")` → `True` |
-| `endswith(suffix)` | 判断是否以某后缀结尾 | `"img.png".endswith(".png")` → `True` |
-| `isdigit()` | 是否全是数字 | `"123".isdigit()` → `True` |
-| `isalpha()` | 是否全是字母 | `"abc".isalpha()` → `True` |
-| `encode(encoding)` | 编码为字节串 | `"你好".encode("utf-8")` → `b'\xe4\xbd\xa0...'` |
-
----
-
-## 5. 格式化字符串（重点）
-
-现代 Python 最推荐 **f-string**（Python 3.6+）：
-
-```python
-
-name = "Alice"
-age = 25
-print(f"My name is {name} and I'm {age} years old.")
-print(f"Pi is roughly {22/7:.2f}")           # 保留两位小数
-print(f"{42:06d}")                           # 输出：000042（6位，补零）
-```
-
-格式说明符格式：{变量名: 填充 对齐 宽度 .精度 类型}
-它遵循严格的顺序
-
-### 1. 填充（可选）
-
-当字符串或数字的宽度不够时，用指定字符补满剩余位置。
-
-- 默认填充字符是**空格**。
-- 可以指定其他字符，如 `0`、`*`、`-` 等。
-
-### 2. 对齐（可选）
-
-控制内容在给定宽度内靠左、靠右还是居中。
-
-| 对齐符号 | 含义 |
-| :--- | :--- |
-| `<` | 左对齐 |
-| `>` | 右对齐 |
-| `^` | 居中对齐 |
-**注意**：对齐通常需要与“宽度”配合使用，否则没有效果
-
-类型符号：b 二进制、x 十六进制、o 八进制、% 百分比。
-
-### 3. 宽度（可选）
-
-指定整个字段最少占用的字符位数。
-
-- 如果内容长度不够，就用“填充”字符补足。
-- 如果内容长度超过宽度，则**不会被截断**，会正常显示全部内容。
-
-### 4. `.精度`（可选）
-
-仅对浮点数有意义，表示小数点后保留几位。
-
-- 前面必须有一个点 `.`，例如 `.2f` 表示保留两位小数。
-
-### 5. 类型（可选）
-
-决定内容的最终显示格式。
-
-| 类型符号 | 含义 |
-| :--- | :--- |
-| `b` | 二进制 |
-| `x` | 十六进制（小写） |
-| `o` | 八进制 |
-| `%` | 百分比（数字乘以 100） |
-| `f` | 浮点数（固定小数位） |
-| `d` | 整数（十进制） |
-
-### 代码示例
-
-```python
-# 数字补零
-print(f"{42:05d}")          # 输出：00042
-
-# 字符串居中填充
-print(f"{'hello':*^10}")    # 输出：**hello***
-
-# 浮点数保留两位小数
-print(f"{3.14159:.2f}")     # 输出：3.14
-
-# 百分比
-print(f"{0.25:.1%}")        # 输出：25.0%
-```
-
-
-## 6. 编码与字节串
-
-区分 **字符串（str）** 和 **字节串（bytes）**。
-
-- str 是 Unicode 码点序列，用于处理文本。
-- bytes 是 0-255 整数序列，用于处理二进制数据（如图像、网络传输）。
-
-两者通过 encode() 和 decode() 互相转换：
-
-```python
-
-text = "Python ♥ 中文"
-data = text.encode("utf-8")   # b'Python \xe2\x99\xa5...'
-text2 = data.decode("utf-8")   # 还原为原字符串
-```
-
-重要提醒：处理文件读写时，务必指定 encoding="utf-8"，否则 Windows 下可能默认用 GBK 编码导致中文乱码。
-
-
-## 7. 遍历字符串
-
-```python
-
-for char in "abc":
-    print(char)
-
-# 需要索引时用 enumerate
-for i, ch in enumerate("世界"):
-    print(i, ch)   # 0 '世', 1 '界'
-```
-enumerate 的作用是：让你在循环中同时拿到“当前是第几个”和“当前是什么”。
-如果你不用 enumerate，你想知道“当前是第几个元素”时，就得手动维护一个计数器：
-
-```python
-
-i = 0
-for ch in "世界":
-    print(i, ch)
-    i += 1
-```
-这样写虽然也能达到同样的效果，但更啰嗦，而且如果循环里面加了 continue 或 break，i 的累加逻辑容易出错。
-
-
-## 8. 字符串的不可变性
-
-每次操作字符串都是生成新对象，原字符串不会改变：
-
-```python
-
-s = "Hello"
-s.upper()      # 返回 "HELLO"，但 s 还是 "Hello"
-print(s)       # "Hello"
-```
-
-性能提示：若需频繁拼接大量字符串（如循环中），请使用 list 收集后用 ''.join()，避免产生大量临时对象导致效率低下。
-
-
-## 9. 字符串与文件处理
-```python
-
-with open("test.txt", "r", encoding="utf-8") as f:
-    content = f.read()       # 整个文件读成字符串
-    lines = f.readlines()    # 按行读成字符串列表
-
-with open("out.txt", "w", encoding="utf-8") as f:
-    f.write("Hello, 世界!")
-```
-
-
-## 10. 相关标准库模块
-
-| 模块 | 用途 |
-| :--- | :--- |
-| `string` | 提供字符串常量（`ascii_letters`, `digits`, `punctuation` 等）和模板 `Template` |
-| `re` | 正则表达式：搜索、替换、匹配模式 |
-| `textwrap` | 段落自动换行、缩进、截断等 |
-| `difflib` | 计算两个字符串序列差异 |
-| `unicodedata` | 查询 Unicode 字符属性 |
-
-
-
-
-
-# 运算符
-
-
-## 1. 算数运算符
-
-你已经知道 `+ - * /`，但 Python 里还有三个你可能没完全摸透的运算符：`//`、`%`、`**`。
-
-| 运算符 | 名称 | 示例 | 结果 |
-| :--- | :--- | :--- | :--- |
-| `//` | 整除（向下取整） | `10 // 3` | `3` |
-| `%` | 取余（模运算） | `10 % 3` | `1` |
-| `**` | 幂运算 | `2 ** 3` | `8` |
-
-硬核细节 1：`/` 永远返回浮点数
-
-```python
-
-print(10 / 2)   # 输出：5.0（不是整数！）
-print(10 // 2)  # 输出：5（整数）
-```
-如果你需要整数结果，必须用 //，而不是 int(10/2)。
-
-硬核细节 2：// 是“向下取整”，不是“截断取整”（新手最易踩的坑）
-
-```python
-
-print(10 // 3)   # 输出：3（3.333 向下取整 -> 3）
-print(-10 // 3)  # 输出：-4（-3.333 向下取整 -> -4，因为 -4 < -3.333）
-```
-
-很多语言（如 C/Java）是“向零取整”，但 Python 是“向下取整（floor）”。如果你需要“向零取整”，可以用 int(-10 / 3)（结果是 -3）。
-
-硬核细节 3：% 的结果符号跟随除数（分母）
-
-```python
-
-print(10 % 3)    # 输出：1
-print(-10 % 3)   # 输出：2（因为 -10 = (-4)*3 + 2）
-print(10 % -3)   # 输出：-1（因为 10 = (-3)*(-3) + 1？不，结果是 -1）
-```
-公式：a % b = a - (a // b) * b。
-只要记住：结果的符号与除数相同，且结果的绝对值小于除数。
-
-
-## 2.赋值运算符
-
-| 运算符 | 例子 | 等价于 |
-| :--- | :--- | :--- |
-| `+=` | `a += 5` | `a = a + 5` |
-| `-=` | `a -= 5` | `a = a - 5` |
-| `*=` | `a *= 5` | `a = a * 5` |
-| `/=` | `a /= 5` | `a = a / 5` |
-| `//=` | `a //= 5` | `a = a // 5` |
-| `%=` | `a %= 5` | `a = a % 5` |
-| `**=` | `a **= 5` | `a = a ** 5` |
-
-硬核细节 1：+= 对可变类型和不可变类型的行为不同（复习第二项）
-
-对整数、字符串（不可变）：a += b 相当于 a = a + b，创建新对象。
-
-对列表（可变）：a += b 相当于 a.extend(b)，原地修改，不会创建新列表。
-
-```python
-
-# 对列表：
-a = [1, 2]
-b = a
-a += [3]
-print(b)   # 输出：[1, 2, 3]（b 也被改了，因为是原地修改）
-```
-
-硬核细节 2：链式赋值
-
-```python
-
-a = b = c = 0
-```
-等价于：
-
-```python
-
-c = 0
-b = c
-a = b
-```
-
-三个变量都指向同一个整数对象 0（整数是不可变的，所以安全）。
-
-
-## 3.比较运算符
-
-== 等于 | != 不等于    |  > 大于
-< 小于  |  >= 大于等于 | <= 小于等于
-
-硬核细节 1：比较运算符可以“链式”写（Python 独有特性）
-
-```python
-
-# 在其他语言里，你只能写成：
-if x > 0 and x < 10:
-    pass
-
-# 在 Python 里，你可以直接写成：
-if 0 < x < 10:
-    pass
-```
-
-Python 会把 0 < x < 10 解析为 0 < x and x < 10。这种写法在数学公式中非常直观，也是 Python 代码简洁性的体现。
-
-硬核细节 2：字符串比较是“按字典序（Unicode 码点）”逐个字符比较
-
-```python
-
-print("apple" < "banana")   # True（a < b）
-print("苹果" < "香蕉")       # 按 Unicode 码点比较，不按拼音
-```
-
-比较规则：从左到右，依次比较第一个不同字符的码点大小。如果所有字符相同，则较短的字符串较小（"abc" < "abcd" 为 True）。
-
-硬核细节 3：不同数据类型比较会直接报错（Python 3 严格禁止）
-
-```python
-
-print(1 > "2")   # TypeError: '>' not supported between instances of 'int' and 'str'
-```
-
-Python 2 允许这种行为（数字会隐式转成字符串比较），但 Python 3 已经彻底移除，这是好事——它强制你显式转换类型，避免隐蔽 bug。
-
-
-## 4.逻辑运算符(and,or,not)
-
-硬核细节 1:短路求值
-
-and：如果左边是 False，右边根本不会执行。
-
-or：如果左边是 True，右边根本不会执行。
-
-```python
-
-def test():
-    print("我被执行了")
-    return True
-
-# 左边是 True，or 直接短路，test() 不会被调用
-if True or test():
-    print("走了 or 分支")
-# 输出：走了 or 分支（没有打印“我被执行了”）
-```
-
-这个特性在写“防御性代码”时非常有用，比如 if user and user.is_active:，如果 user 是 None，or/and 不会尝试访问 user.is_active，从而避免了 AttributeError。
-
-硬核细节 2: and 和 or 返回的是“最后求值的那个操作数”，而不是纯粹的 True/False
-
-```python
-
-print(0 and 5)    # 输出：0（因为 0 是假，and 短路，直接返回 0）
-print(3 and 5)    # 输出：5（因为 3 是真，and 继续求值，返回第二个操作数 5）
-print(0 or 5)     # 输出：5（因为 0 是假，or 短路，返回第二个操作数 5）
-print(3 or 5)     # 输出：3（因为 3 是真，or 短路，直接返回第一个操作数 3）
-```
-
-也就是说，and 和 or 不负责把结果转换成布尔值，它们只是“选择”一个操作数返回。你平时把它们放在 if 语句里使用时，if 会自动把这些返回值当成布尔值来判断。
-
-硬核细节 3：not 返回的是布尔值（和 and/or 不同）
-
-```python
-
-print(not 0)   # True
-print(not 5)   # False
-```
-
-not 永远返回 True 或 False，因为它是一个取反操作。
-
-硬核细节 4：优先级顺序（从小到大排列）
-优先级从高到低：not,and,or
-
-```python
-
-# 不用记，直接加括号即可
-if (x > 0 and y > 0) or z > 0:
-    pass
-```
-
-
-
-
-# 判断类
-
-
-## 1. if-elif-else（条件判断）
-
-基本结构：
-
-```python
-
-if 条件1:
-    # 条件1为真时执行
-elif 条件2:
-    # 条件1为假且条件2为真时执行
-else:
-    # 所有条件都为假时执行
-```
-
-硬核细节 1：elif 的本质是“嵌套的 if-else”的语法糖
-
-```python
-
-# 你写的：
-if a > 0:
-    print("正数")
-elif a == 0:
-    print("零")
-else:
-    print("负数")
-
-# 实际上等价于：
-if a > 0:
-    print("正数")
-else:
-    if a == 0:
-        print("零")
-    else:
-        print("负数")
-elif 让你的代码少了一层缩进，但底层逻辑完全一样。
-```
-
-硬核细节 2：if 条件判断的不是“布尔值”，而是“隐式布尔转换”
-
-Python 的 if 语句会自动将条件表达式的结果转换成布尔值，而不要求它必须是 True 或 False。
-
-被判定为 False 的值（Falsy）只有 8 种：
-None,False,数字 0（包括 0、0.0、0j）,空字符串 "",空列表 []
-空元组 (),空字典 {},空集合 set()
-
-除此以外，一切都被判定为 True。
-
-```python
-
-# 你见过这种写法：
-if user_name:   # 如果 user_name 不是空字符串，就认为它“存在”
-    print(f"你好，{user_name}")
-
-# 等价于：
-if user_name != "":
-    print(f"你好，{user_name}")
-```
-
-这种写法是 Python 里常见的“防御性检查”，可以在不额外处理空值的情况下简化逻辑。
-
-硬核细节 3：elif 的“短路”效应
-
-和 and/or 一样，if-elif-else 是从上到下依次检查的。一旦某个条件为真，后面的所有 elif 和 else 都会被直接跳过，不会再执行。
-
-```python
-
-x = 5
-if x > 0:
-    print("A")
-elif x > 2:   # 即使 x > 2 也为真，但因为上面已经执行了，这行永远不会触发
-    print("B")
-else:
-    print("C")
-# 输出：A（B 和 C 都不会执行）
-```
-
-这和多个独立的 if 不同（独立的 if 会逐一检查，不会短路）。
-
-
-## 2. try-except（异常处理）
-
-硬核细节 1：try-except 捕获的是“异常”，不是“错误”
-
-语法错误（SyntaxError）：代码写错了，连运行都进不去，try 救不了。
-
-运行时异常（Exception）：代码能运行，但运行中途出问题了（比如用户输入了非数字），try 可以捕获。
-
-```python
-
-# ❌ 语法错误，try 救不了
-try:
-    print("hello"   # 这里漏了右括号，程序根本跑不起来
-except:
-    pass
-
-# ✅ 运行时异常，try 可以捕获
-try:
-    num = int(input("请输入数字："))
-except ValueError:
-    print("输入的不是有效数字")
-```
-
-硬核细节 2：异常捕获的顺序是从具体到通用
-
-如果你写了多个 except 块，必须把最具体的异常写在最前面，否则会直接拦截掉所有更具体的异常。
-
-```python
-
-try:
-    num = int(input("请输入数字："))
-except ValueError:
-    print("输入的不是数字")
-except Exception as e:
-    print(f"其他错误：{e}")
-```
-
-如果反过来写（先 `except Exception`），那么 `ValueError` 也会被捕获到，后面的 except ValueError 永远不会执行。
-
-硬核细节 3：except 不捕获 KeyboardInterrupt 和 SystemExit
-
-KeyboardInterrupt 是用户按 Ctrl+C 触发的，SystemExit 是 sys.exit() 触发的。这两个异常不属于普通异常，它们代表“用户/程序要求退出”，而不是“程序出错了”。
-
-```python
-
-try:
-    while True:
-        print("运行中...")
-except KeyboardInterrupt:
-    print("用户按了 Ctrl+C，程序退出")
-```
-这是合理的用法，用于让程序能够优雅地响应中断。
-
-硬核细节 4：else 和 finally 在 try-except 中的意义
-
-else：当 try 块没有抛出任何异常时，执行 else 块。
-
-finally：无论是否抛出异常，最终都会执行（比如关闭文件、释放资源）。
-
-```python
-try:
-    file = open("data.txt", "r")
-except FileNotFoundError:
-    print("文件不存在")
-else:
-    print("文件读取成功")
-    content = file.read()
-finally:
-    print("清理中...")
-    file.close()
-```
-如果文件存在：执行 try → else → finally。
-
-如果文件不存在：执行 try（报错）→ except → finally。
-
-
-## 3. 三目运算（条件表达式）
-
-
-三目运算是在一行内完成“如果...否则...”的逻辑，常用于简化简单赋值。
-
-```python
-
-值1 if 条件 else 值2
-```
-
-如果条件为真，返回 值1；否则返回 值2。
-
-硬核细节 1：它必须有返回值（不能执行语句，只能返回表达式）
-
-```python
-
-# 正确（赋值）
-age = 18
-status = "成年" if age >= 18 else "未成年"
-
-# 错误（不能在里面写 print）
-age >= 18 else print("未成年")   # ❌ SyntaxError
-```
-
-硬核细节 2：可以嵌套，但可读性会下降
-
-```python
-
-score = 85
-grade = "优秀" if score >= 90 else ("良好" if score >= 70 else "及格")
-print(grade)   # 输出：良好
-```
-
-嵌套的三目运算虽然能写，但超过两层就会让人头大。建议如果逻辑超过两层，直接用传统的 if-elif-else。
-
-硬核细节 3：三目运算 vs if-else 块
-
-```python
-
-# if-else 块（可以执行多行代码）
-if age >= 18:
-    print("成年")
-    status = "成年"
-else:
-    print("未成年")
-    status = "未成年"
-
-# 三目运算（只能取一个值，不能执行语句）
-status = "成年" if age >= 18 else "未成年"
-```
-
-三目运算是“表达式”，不是“语句”。它必须返回一个值，而不能包含多个操作。
-
-
-
-
-
-# 输入函数 input()
-
-硬核细节 1：input() 返回的永远是字符串（str），哪怕你输入的是数字。
-
-```python
-
-age = input("请输入年龄：")
-print(type(age))   # 输出：<class 'str'>
-```
-
-如果你拿 age 去比较大小（age > 18），会直接报错：TypeError: '>' not supported between instances of 'str' and 'int'。
-
-正确写法：
-
-```python
-
-age = int(input("请输入年龄："))   # 必须手动转成整数
-```
-
-硬核细节 2：如果用户输入了非数字内容，int() 会直接崩溃（ValueError）。
-
-```python
-
-age = int(input("请输入年龄："))   # 用户输入了 "abc"
-# 报错：ValueError: invalid literal for int() with base 10: 'abc'
-```
