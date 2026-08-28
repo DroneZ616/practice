@@ -1115,6 +1115,57 @@ fruits[0] = "草莓"         # 改
 fruits.remove("香蕉")      # 删
 print(fruits[1])           # 查
 ```
+**列表的排序方法（`.sort()` 与 `sorted()`）**
+1. `.sort()`
+
+`.sort()` 会**直接修改原列表**，将其按升序（默认）或降序排列。它**不返回新列表**，而是返回 `None`。
+
+**语法**：
+```python
+列表.sort(key=None, reverse=False)
+```
+
+`key`：指定排序依据的函数（常与 `lambda` 配合使用）。
+`reverse`：`True` 为降序，`False`（默认）为升序。
+
+```python
+numbers = [3, 1, 4, 1, 5]
+numbers.sort()
+print(numbers)  # [1, 1, 3, 4, 5]
+
+# 按字典的年龄排序（key 的用法）
+players = [{"name": "A", "age": 25}, {"name": "B", "age": 18}]
+players.sort(key=lambda p: p["age"])
+print(players)  # [{"name": "B", "age": 18}, {"name": "A", "age": 25}]
+```
+
+2. `sorted()`
+
+`sorted()` 会返回一个排好序的新列表，而原列表保持不变
+
+语法：
+```python
+新列表 = sorted(原列表, key=None, reverse=False)
+```
+示例：
+
+```python
+numbers = [3, 1, 4, 1, 5]
+new_numbers = sorted(numbers)
+print(numbers)      # [3, 1, 4, 1, 5]（原列表没变）
+print(new_numbers)  # [1, 1, 3, 4, 5]（新列表）
+```
+
+3. `key` 参数的说明
+
+`key` 接收一个“函数”，这个函数会作用于列表的每一个元素，生成一个“比较键”。排序时，Python 会根据这个“比较键”来决定顺序，而不是直接用元素本身。
+
+- 按数字排序时，key 通常省略（因为数字本身就能比较）。
+- 按字典的值排序时，key 是必需的，因为字典本身无法直接比较大小。常用到 `lambda`
+- 按字符串长度排序时，可以写 key=len（len 是一个函数名，不需要加括号）。
+
+4. 稳定性
+Python 的排序是稳定的，即如果两个元素的排序键相同，它们在排序后的相对顺序与排序前一致。这在处理复杂数据时非常有用，但你现在了解即可。
 
 ## 元组 tuple
 
